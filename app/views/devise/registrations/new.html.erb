@@ -18,6 +18,11 @@
     <%= f.text_field :name, autofocus: true, autocomplete: "Example Name" %>
   </div>
 
+  <div>
+    <%= f.label :avatar, class: "new-category-label" %><br>
+    <%= f.file_field :avatar, accept: "image/png, image/jpeg"%>
+  </div>
+
   <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
