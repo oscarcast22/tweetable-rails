@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_27_030722) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_27_032952) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -28,6 +28,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_27_030722) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "replied_to_id"
+    t.index ["replied_to_id"], name: "index_tweets_on_replied_to_id"
     t.index ["user_id"], name: "index_tweets_on_user_id"
   end
 
@@ -49,5 +51,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_27_030722) do
 
   add_foreign_key "likes", "tweets"
   add_foreign_key "likes", "users"
+  add_foreign_key "tweets", "tweets", column: "replied_to_id"
   add_foreign_key "tweets", "users"
 end
