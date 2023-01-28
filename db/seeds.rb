@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
 require "faker"
 
 puts "Destroying all data"
@@ -12,9 +5,9 @@ puts "Destroying all data"
 User.destroy_all
 Tweet.destroy_all
 
-puts "seeding data"
+puts "Seeding data"
 
-puts "start creating admin user"
+puts "Seeding admin user"
 
 new_admin = User.create(username: "admin", 
                         name: "admin",
@@ -29,7 +22,7 @@ new_admin = User.create(username: "admin",
     puts "Errors: #{new_admin.errors.full_messages}"
   end
 
-puts "start creating random members users"
+puts "Seeding random users"
 
 4.times do
   new_user = User.create(username: Faker::Internet.unique.username, 
@@ -39,13 +32,13 @@ puts "start creating random members users"
                          password_confirmation: "123456",
                          role: "member")
   if new_user.save
-    puts "Created random users Succesfully"
+    puts "Created random user Succesfully"
     new_user.avatar.attach(io: File.open("public/images/avatar.jpg"), filename: "avatar.jpg")
   else
     puts "Errors: #{new_user.errors.full_messages}"
   end
 
-  puts "creating tweets"
+  puts "Seeding tweets"
 
   3..6.times do
     new_tweet = Tweet.create(
@@ -53,7 +46,7 @@ puts "start creating random members users"
       user_id: new_user.id
     )
     if new_tweet.save
-      puts "Created Tweets Succesfully"
+      puts "Created tweet Succesfully"
     else
       puts "Errors: #{new_tweet.errors.full_messages}"
     end

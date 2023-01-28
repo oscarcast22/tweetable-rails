@@ -1,0 +1,208 @@
+@import url("./layouts/typography.css");
+
+.users-title {
+    font-family: var(--font-title);
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 36px;
+    color: var(--gray-500);
+    margin: 16px 0;
+    align-self: start;
+}
+
+.new-user {
+    border: none;
+    background: var(--gray-300);
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    text-decoration: none;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-family: var(--font-text);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: 1.25px;
+    text-transform: uppercase;
+    align-self: start;
+}
+
+.users {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 452px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.user-card {
+    margin-top: 2rem;
+    border-radius: 8px;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.3), 0px 4px 6px -2px rgba(0, 0, 0, 0.2);
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.user-avatar {
+    max-height: 250px;
+    max-width: 450px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.user-name {
+    font-family: var(--font-title);
+    font-size: 24px;
+    line-height: 32px;
+    color: var(--gray-400);
+    text-decoration: none;
+    text-transform: capitalize;
+    align-self: start;
+    margin-left: 5%;
+}
+
+.user-counters{
+    font-family: var(--font-text);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--gray-300);
+    text-transform: lowercase;
+    align-self: start;
+    margin-left: 5%;
+}
+
+.user-description {
+    font-family: var(--font-text);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--gray-400);
+    align-self: start;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.user-icons {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 3rem;
+    align-self: end;
+    margin-right: 10%;
+    font-family: var(--font-text);
+    color: var(--gray-400);
+    font-size: 15px;
+}
+
+.user-icons a {
+    text-decoration: none;
+    color: white;
+    background: var(--gray-300);
+    padding: 0.6rem;
+    border-radius: 8px;
+}
+
+.user-icons a:hover {
+    background: var(--gray-400);
+}
+
+.new-user_title {
+    margin-top: 1rem;
+    font-family: var(--font-title);
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 36px;
+    color: var(--gray-500);
+    text-align: center;
+    margin-left: -15%;
+}
+
+.form-new_user {
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-new_error-title {
+    font-family: var(--font-title);
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+    color: var(--error-400);
+}
+
+.error-user-ul {
+    font-family: var(--font-text);
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--gray-500);
+    margin: 1rem 30px;
+}
+
+.new-user-label {
+    font-family: var(--font-title);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gray-400);
+}
+
+.new-user-input {
+    margin-top: 0.5rem;
+    padding: 0.5rem 12px;
+    border: 1px solid var(--gray-300);
+    border-radius: 6px;
+    font-family: var(--font-text);
+    font-size: 16px;
+    line-height: 24px;
+    outline: none;
+    color: var(--gray-400);
+    margin-bottom: 1rem;
+}
+
+.new-user-cover {
+    margin-top: 1rem;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.button {
+    background: var(--gray-300);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: var(--font-text);
+    font-size: 14px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    margin-top: 2rem;
+    text-decoration: none;
+}
+
+.select-photos select {
+    margin-top: 0.5rem;
+    padding: 0.5rem 12px;
+    border: 1px solid var(--gray-300);
+    border-radius: 6px;
+    font-family: var(--font-text);
+    font-size: 16px;
+    line-height: 24px;
+    outline: none;
+    color: var(--gray-400);
+    margin-bottom: 1rem;
+}
