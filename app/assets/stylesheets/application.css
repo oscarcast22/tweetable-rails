@@ -154,7 +154,7 @@
 .tweet-card {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: space-between;
     padding: 4px 8px;
     gap: 8px;
     width: 328px;

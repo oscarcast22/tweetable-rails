@@ -1,7 +1,9 @@
 <section class = "tweets">
   <h1 class="title-tweet">Home</h1>
 
+  <div>
   <%= render "form", tweet: Tweet.new %>
+  </div>
 
   <div class="tweets-cards">
     <% @tweets.each do |tweet|%>

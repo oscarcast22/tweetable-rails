@@ -6,7 +6,7 @@ class Tweet < ApplicationRecord
                      inverse_of: "replied_to",
                      dependent: :destroy,
                      counter_cache: :retweet
-  
+
   belongs_to :replied_to, class_name: "Tweet", optional: true
 
   belongs_to :user
