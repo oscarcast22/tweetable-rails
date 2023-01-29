@@ -1,15 +1,31 @@
 <section class = "tweets">
-<h1 class="title-tweet">Home</h1>
+  <h1 class="title-tweet">Home</h1>
 
-<%= link_to "New tweet", new_tweet_path, class: "new-tweet" %>
+  <%= render "form", tweet: Tweet.new %>
 
-<div id="tweets">
-  <% @tweets.each do |tweet| %>
-    <p><%= tweet.user.name %> @<%= tweet.user.username %></p>
-    <p><%= time_ago_in_words(tweet.created_at) %></p>
-    <p><%= tweet.body %></p>
-      <%= link_to "Show this tweet", tweet %>
-    </p>
-  <% end %>
-</div>
+  <div class="tweets-cards">
+    <% @tweets.each do |tweet|%>
+      <div class="tweet-card">
+       <div class="user-info">
+          <%= link_to tweet.user do %>
+            <%= image_tag(tweet.user.avatar, class:"circular-avatar") %>
+          <% end %>
+          <div class="tweet-link">
+            <%= link_to tweet.user, class:"tweet-link" do %>
+               <span class="tweet-user-name"><%= tweet.user.name %></span> <span class="link">@<%= tweet.user.username %></span>
+            <% end %>
+            <p class="time-text"><%= time_ago_in_words(tweet.created_at) %> ago</p>
+          </div>
+        </div>
+        <div class="tweet-link">
+          <%= link_to tweet, class:"tweet-link" do %>
+            <p class="tweet-body"><%= tweet.body %></p>
+          <% end %>
+        </div>
+        <div class="tweet-icons">
+          <p><%= tweet.likes.count %> Likes</p>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </section>
