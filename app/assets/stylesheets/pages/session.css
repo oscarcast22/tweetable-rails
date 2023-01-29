@@ -1,0 +1,34 @@
+.logo-size {
+  max-width: 150px;
+}
+
+.layout-button {
+  border: none;
+  border-radius: 10px;
+  background-color: var(--gray-400);
+}
+
+.menu:active {
+  transform: scale(1, 0.9);
+}
+
+.menu-logo-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 15px;
+}
+
+.menu-hidden {
+  display: block;
+}
+
+.menu-show {
+  display: block;
+}
+
+.layout-session {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
