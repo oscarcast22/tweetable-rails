@@ -13,9 +13,11 @@
   <% end %>
 
   <div>
-    <%= form.text_area :body, placeholder: "example@mail.com"  %>
+    <%= form.text_area :body, placeholder: "remember to think before write..."  %>
   </div class="nav-button">
+   <% if user_signed_in? %>
     <%= form.hidden_field :user_id, value: current_user.id %>
+    <% end %>
     <%= form.submit %>
   </div>
   <% end %>

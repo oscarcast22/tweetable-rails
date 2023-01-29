@@ -1,3 +1,5 @@
+@import url("./layouts/colors.css");
+
 .tweer-box{
     background: var(--white);
     border: 1px solid var(--gray-200);
