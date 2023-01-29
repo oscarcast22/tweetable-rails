@@ -10,11 +10,32 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="body">
-  <header class="header">
-    <div class="container navbar">
-      <a href="/"></a>
-  </header>
+  <body>
+    <div class="container">
+      <header>
+        <div class="menu-logo-layout">
+          <div class="logo-size">
+            <%= link_to(image_tag("twetable-logo.png"), root_path) %>
+          </div>
+          <div>
+            <%= image_tag "menu.svg", class: "menu" %>
+          </div>
+        </div>
+          <br/>
+          <div class="menu-hidden">
+            <div class="layout-center-text">
+              <% if user_signed_in? %>
+                <p class="nav-text">Thanks for using Tweetable!</p><br/>
+                <p><%= link_to " Profile", user_path(current_user), class:"link"%></p><br/>
+                <button class="nav-button button-logout"><%= link_to "Log out", destroy_user_session_path, class:"button-text", data: { turbo_method: :delete } %></button>
+                <% else %>
+                <p class="nav-text">Login to start the tweeting madness!</p>
+                <button class="nav-button"><%= link_to "Login", new_user_session_path, class: "button-text" %></button>
+              <% end %>
+            </div>
+          </div>
+      </header>
+    </div>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>

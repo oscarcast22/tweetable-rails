@@ -5,8 +5,9 @@
 
 <div id="tweets">
   <% @tweets.each do |tweet| %>
-    <%= render tweet %>
-    <p>
+    <p><%= tweet.user.name %> @<%= tweet.user.username %></p>
+    <p><%= time_ago_in_words(tweet.created_at) %></p>
+    <p><%= tweet.body %></p>
       <%= link_to "Show this tweet", tweet %>
     </p>
   <% end %>

@@ -3,8 +3,11 @@
 @import url("./pages/footer.css");
 @import url("./pages/header.css");
 @import url("./pages/tweets.css");
+@import url("./pages/session.css");
 @import url("./layouts/shadows.css");
 @import url("./pages/users.css");
+@import url("./layouts/reset.css");
+@import url("./layouts/layout.css");
 
 * {
     margin: 0;
@@ -24,6 +27,49 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: auto;
+}
+
+.nav-button {
+    background: var(--primary-300);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 62px; 
+    height: 28px;
+    color: white;
+    border: none;
+    padding: 8px, 16px;
+    gap: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: var(--font-text);
+    font-size: 14px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    margin-top: 2rem;
+    text-decoration: none;
+    margin: auto;
+}
+.button-logout{
+    background: var(--gray-300);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 82px; 
+    height: 28px;
+    color: white;
+    border: none;
+    padding: 6px, 10px;
+    gap: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: var(--font-text);
+    font-size: 14px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    margin-top: 2rem;
+    text-decoration: none;
     margin: auto;
 }
 
@@ -49,8 +95,30 @@
     margin: auto;
 }
 
-.body {
-    background-color: var(--gray-100);
+.button-text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: 1.25px;
+    text-transform: uppercase;
+    color: var(--white);
+    text-decoration: none;
+}
+
+.nav-text {
+    font-family: var(--font-text);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    width: 244px;
+    height: 28px;
+    color: var(--gray-400);
+    margin: auto;
 }
 
 .auxiliar-text {
