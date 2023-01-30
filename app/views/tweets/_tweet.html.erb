@@ -1,12 +1,32 @@
-<div id="<%= dom_id tweet %>">
-  <p>
-    <strong>Body:</strong>
-    <%= tweet.body %>
-  </p>
+<br/>
 
-  <p>
-    <strong>User:</strong>
-    <%= tweet.user_id %>
-  </p>
+<h1 class="title-tweet">Tweet Details</h1>
+<br/>
+<section id="<%= dom_id tweet %>">
+  <div class="tweet-card">
+    <div class="user-info">
+      <%= link_to tweet.user do %>
+        <%= image_tag(tweet.user.avatar, class:"circular-avatar") %>
+      <% end %>
+      <div class="tweet-link">
+        <%= link_to tweet.user, class:"tweet-link" do %>
+          <span class="tweet-user-name"><%= tweet.user.name %></span> <span class="link">@<%= tweet.user.username %></span>
+        <% end %>
+        <p class="time-text"><%= time_ago_in_words(tweet.created_at) %> ago</p>
+      </div>
+    </div>
+    <div class="tweet-link">
+      <%= link_to tweet, class:"tweet-link" do %>
+        <p class="tweet-body"><%= tweet.body %></p>
+      <% end %>
+    </div>
+    <div class="tweet-icons">
+      <p><%= tweet.likes.count %> Likes</p>
+      <p><%= tweet.replies.count %> Replies</p>
+    </div>
+  </div>
+</section>
 
-</div>
+  <div> 
+  <%= render "form", tweet: Tweet.new(replied_to_id: tweet.id) %>
+  </div>
